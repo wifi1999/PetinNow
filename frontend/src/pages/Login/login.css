@@ -1,0 +1,33 @@
+.sign-up-form{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   padding: 40px;
+}
+
+.Logo-Image{
+   width: 24rem;
+   height: 24rem;
+}
+
+.email, .password{
+   display: flex;
+   gap: 0.5rem;
+}
+
+.register-text{
+   cursor: pointer;
+   color: black;
+}
+
+span{
+   font-weight: bold;
+}
+
+.input-field{
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+}
