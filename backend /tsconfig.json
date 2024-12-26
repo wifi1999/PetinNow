@@ -1,11 +1,26 @@
+// {
+//    "compilerOptions": {
+//       "module": "commonjs",
+//       "esModuleInterop": true,
+//       "target": "es6",
+//       "moduleResolution": "node",
+//       "sourceMap": true,
+//       "outDir": "dist"
+//    },
+//    "lib": ["es2015"]
+// }
 {
    "compilerOptions": {
-      "module": "commonjs",
+      /* Language and Environment */
+      "target": "es2016" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
+      /* Modules */
+      "module": "commonjs" /* Specify what module code is generated. */,
+      "rootDir": "./",
+      "outDir": "./dist",
       "esModuleInterop": true,
-      "target": "es6",
-      "moduleResolution": "node",
-      "sourceMap": true,
-      "outDir": "dist"
-   },
-   "lib": ["es2015"]
+      "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
+      /* Type Checking */
+      "strict": true,
+      "skipLibCheck": true /* Skip type checking all .d.ts files. */
+   }
 }
