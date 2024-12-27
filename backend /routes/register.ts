@@ -6,7 +6,6 @@ const router: express.Router = express.Router()
 router.post('/register', async(req: Request, res: Response) => {
    try{
       const user = req.body;
-
       const { name, email, password } = user
 
       const emailExist = await User.findOne({
