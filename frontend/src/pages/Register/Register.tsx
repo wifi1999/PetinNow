@@ -1,5 +1,6 @@
 import "./register.css"
 import Button from "../../utils/Button"
+import Alert from "../../utils/Alert"
 import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react"
 import axios from 'axios';
@@ -9,6 +10,7 @@ export default function Register() {
    const [name, setName] = useState('')
    const [email, setEmail] = useState('')
    const [password, setPassword] = useState('')
+   const [error, setError] = useState('')
 
    const navigation = useNavigate()
 
@@ -20,9 +22,17 @@ export default function Register() {
             password
          })
          navigation('/login')
-      }catch(err){
-         console.log('Error with registration', err)
+      }catch(err: any){
+         setError(String(err.response.data.message))
+      }finally{
+         setName('')
+         setEmail('')
+         setPassword('')
       }
+   }
+
+   function handleDelete(){
+      setError('')
    }
 
    return (
@@ -32,6 +42,9 @@ export default function Register() {
             <div className='Logo'>
                <img src="/Logo.png" className='Logo-Image' alt='logo'/>
             </div>
+
+            {error && (<div className="error-message">{error} <button onClick={handleDelete} className="error-cancel-btn">X</button> </div>)}
+            {error && <Alert errorMsg={error} />}
 
             <div className="input-field">
                <div className='name'>

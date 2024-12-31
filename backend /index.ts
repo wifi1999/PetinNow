@@ -2,8 +2,8 @@ import express, { Application } from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import RegisterRouter from './routes/register'
-import LoginRouter from './routes/login'
+import AuthRouter from './routes/auth'
+import ErrorHandler from './middlewares/errorHandler'
 
 const app: Application = express();
 const port: number = 3000;
@@ -21,8 +21,8 @@ app.use(
 )
 
 // Routers
-app.use('/auth', RegisterRouter)
-app.use('/auth', LoginRouter)
+app.use('/auth', AuthRouter)
+app.use(ErrorHandler)
 
 app.listen(port, async () => {
    console.log(`Server is running on http://localhost:${port}`);

@@ -31,3 +31,15 @@ span{
    flex-direction: column;
    gap: 0.5rem;
 }
+
+.error-message{ 
+   background-color: rgb(235, 70, 70);
+   padding: 10px;
+   border-radius: 2rem;
+   color: white;
+}
+
+.error-cancel-btn{
+   background-color: transparent;
+   border: none;
+}

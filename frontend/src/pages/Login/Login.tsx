@@ -9,6 +9,8 @@ import { loginSuccess, logoutSuccess } from "../../redux/authSlice"
 export default function Login() {
    const [email, setEmail] = useState('')
    const [password, setPassword] = useState('')
+   const [error, setError] = useState('')
+
    const dispatch = useDispatch()
 
    async function handleLogin(){
@@ -20,8 +22,9 @@ export default function Login() {
          const user = res.config.data
          dispatch(loginSuccess(user))
 
-      } catch (err) {
+      } catch (err: any) {
          console.log('Error with login', err)
+         setError(err.response.data.message)
       }
    }
    
@@ -32,6 +35,8 @@ export default function Login() {
             <div className='Logo'>
                <img src="/Logo.png" className='Logo-Image' alt='logo'/>
             </div>
+
+            {error && <div>{error}</div>}
 
             <div className="input-field">
                <div className='email'>
